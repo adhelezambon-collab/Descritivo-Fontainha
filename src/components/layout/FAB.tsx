@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button'
-import { MessageCircle } from 'lucide-react'
+import { Phone } from 'lucide-react'
 
 export function FAB() {
   return (
@@ -9,8 +9,8 @@ export function FAB() {
         className="rounded-full shadow-2xl bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-6 gap-3 group"
         onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
       >
-        <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
-        <span className="font-medium tracking-wide">Solicitar acesso</span>
+        <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
+        <span className="font-medium tracking-wide">Entrar em contato</span>
       </Button>
     </div>
   )

@@ -6,19 +6,11 @@ export function Gallery() {
   const photos = [
     {
       src: img1,
-      caption: 'A escala monumental da Praia da Fontainha.',
+      caption: 'A escala monumental das falésias na Praia da Fontainha.',
     },
     {
       src: imgHero,
       caption: '850 metros de conexão direta com o Atlântico.',
-    },
-    {
-      src: 'https://img.usecurling.com/p/800/800?q=tropical%20beach%20landscape',
-      caption: 'Topografia privilegiada para projetos de alto impacto.',
-    },
-    {
-      src: 'https://img.usecurling.com/p/800/800?q=sand%20dunes%20blue%20sky',
-      caption: 'Beleza natural preservada: o cenário do seu próximo resort.',
     },
   ]
 

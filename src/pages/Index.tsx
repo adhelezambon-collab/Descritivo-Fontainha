@@ -7,7 +7,7 @@ import { Location } from '@/components/sections/Location'
 import { Potential } from '@/components/sections/Potential'
 import { Media } from '@/components/sections/Media'
 import { Gallery } from '@/components/sections/Gallery'
-import { Exclusivity } from '@/components/sections/Exclusivity'
+import { Contact } from '@/components/sections/Contact'
 import { Footer } from '@/components/sections/Footer'
 import { useScrollProgress } from '@/hooks/use-scroll-progress'
 
@@ -32,7 +32,7 @@ export default function Index() {
         <Potential />
         <Media />
         <Gallery />
-        <Exclusivity />
+        <Contact />
       </main>
 
       <Footer />
