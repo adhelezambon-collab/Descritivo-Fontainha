@@ -2,7 +2,7 @@ import { FadeIn } from '@/components/ui/fade-in'
 
 const stats = [
   { value: '97', unit: 'Hectares', desc: 'Escala para projetos que definem a região.' },
-  { value: '850', unit: 'Metros', desc: 'De fronteira linear entre o investimento e o oceano.' },
+  { value: '850', unit: 'Metros', desc: 'de Frente Mar.' },
   { value: '1', unit: 'Único', desc: 'Ativo beira-mar com esta magnitude disponível.' },
 ]
 
