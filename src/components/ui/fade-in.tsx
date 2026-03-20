@@ -1,24 +1,56 @@
-import { HTMLAttributes } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
-import { useFadeIn } from '@/hooks/use-fade-in'
 
-interface FadeInProps extends HTMLAttributes<HTMLDivElement> {
+interface FadeInProps extends React.HTMLAttributes<HTMLDivElement> {
   delay?: number
-  threshold?: number
+  direction?: 'up' | 'down' | 'left' | 'right' | 'none'
 }
 
-export function FadeIn({ children, className, delay = 0, threshold = 0.1, ...props }: FadeInProps) {
-  const { ref, isVisible } = useFadeIn(threshold)
+export function FadeIn({
+  children,
+  delay = 0,
+  direction = 'up',
+  className,
+  ...props
+}: FadeInProps) {
+  const [isVisible, setIsVisible] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.unobserve(entry.target)
+        }
+      },
+      { threshold: 0.1 },
+    )
+
+    if (ref.current) observer.observe(ref.current)
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current)
+    }
+  }, [])
+
+  const translateClass = {
+    up: 'translate-y-8',
+    down: '-translate-y-8',
+    left: 'translate-x-8',
+    right: '-translate-x-8',
+    none: 'translate-y-0 translate-x-0',
+  }[direction]
 
   return (
     <div
       ref={ref}
       className={cn(
-        'opacity-0 transition-opacity duration-1000',
-        isVisible ? 'animate-fade-in-up' : '',
+        'transition-all duration-1000 ease-out',
+        isVisible ? 'opacity-100 translate-y-0 translate-x-0' : `opacity-0 ${translateClass}`,
         className,
       )}
-      style={{ animationDelay: `${delay}ms` }}
+      style={{ transitionDelay: `${delay}ms` }}
       {...props}
     >
       {children}

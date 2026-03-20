@@ -1,35 +1,44 @@
 import { FadeIn } from '@/components/ui/fade-in'
+import { Card, CardContent } from '@/components/ui/card'
+import { Map, Maximize, Waves } from 'lucide-react'
 
-const stats = [
-  { value: '97', unit: 'Hectares', desc: 'Escala para projetos que definem a região.' },
-  { value: '850', unit: 'Metros', desc: 'de Frente Mar.' },
-  { value: '1', unit: 'Único', desc: 'Ativo beira-mar com esta magnitude disponível.' },
-]
+export function Highlights() {
+  const stats = [
+    {
+      icon: <Maximize className="w-8 h-8 stroke-[1.5] mb-4 text-secondary" />,
+      title: '97 Hectares',
+      desc: 'Área total beira-mar com topografia privilegiada para projetos de alto impacto.',
+    },
+    {
+      icon: <Waves className="w-8 h-8 stroke-[1.5] mb-4 text-secondary" />,
+      title: '850 Metros de Frente Mar',
+      desc: 'Extensão linear monumental, garantindo exclusividade absoluta em frente ao Atlântico.',
+    },
+    {
+      icon: <Map className="w-8 h-8 stroke-[1.5] mb-4 text-secondary" />,
+      title: 'Localização Estratégica',
+      desc: 'Acesso facilitado no coração do corredor turístico internacional do Ceará.',
+    },
+  ]
 
-export function HighlightsSection() {
   return (
-    <section id="highlights" className="py-24 px-6 bg-secondary/10">
-      <FadeIn>
-        <div className="mb-16">
-          <span className="text-primary text-sm font-semibold tracking-widest uppercase mb-2 block">
-            Números do Ativo
-          </span>
-          <h2 className="text-3xl font-serif">A dimensão da exclusividade.</h2>
+    <section className="py-24 bg-zinc-50 border-y border-zinc-200">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {stats.map((stat, i) => (
+            <FadeIn key={i} delay={i * 200}>
+              <Card className="bg-transparent border-0 shadow-none text-center h-full">
+                <CardContent className="pt-6 flex flex-col items-center">
+                  {stat.icon}
+                  <h3 className="text-xl font-serif font-semibold mb-3 text-primary">
+                    {stat.title}
+                  </h3>
+                  <p className="text-muted-foreground font-light leading-relaxed">{stat.desc}</p>
+                </CardContent>
+              </Card>
+            </FadeIn>
+          ))}
         </div>
-      </FadeIn>
-
-      <div className="grid gap-12">
-        {stats.map((stat, idx) => (
-          <FadeIn key={idx} delay={idx * 150} className="border-l border-primary/20 pl-6">
-            <div className="flex items-baseline gap-2 mb-2">
-              <span className="text-5xl font-light font-serif tracking-tighter text-foreground">
-                {stat.value}
-              </span>
-              <span className="text-lg font-medium text-muted-foreground">{stat.unit}</span>
-            </div>
-            <p className="text-muted-foreground leading-relaxed max-w-xs">{stat.desc}</p>
-          </FadeIn>
-        ))}
       </div>
     </section>
   )

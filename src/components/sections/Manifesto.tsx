@@ -1,15 +1,27 @@
 import { FadeIn } from '@/components/ui/fade-in'
 
-export function ManifestoSection() {
+export function Manifesto() {
   return (
-    <section className="py-32 px-8 flex items-center justify-center bg-background text-center">
-      <FadeIn className="max-w-md mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-serif text-foreground leading-relaxed">
-          "Onde a <span className="text-primary italic">escassez de terra</span> encontra a
-          imensidão do mar."
-        </h2>
-        <div className="w-12 h-[1px] bg-primary/30 mx-auto mt-10" />
-      </FadeIn>
+    <section className="py-24 md:py-32 bg-background">
+      <div className="container mx-auto px-6 max-w-4xl text-center">
+        <FadeIn>
+          <h2 className="text-3xl md:text-5xl font-serif leading-snug text-foreground text-balance">
+            "Onde a terra encontra a imensidão, nasce um legado inquestionável. A raridade não é um
+            luxo, é um ativo finito."
+          </h2>
+        </FadeIn>
+
+        <FadeIn delay={200}>
+          <p className="mt-8 text-muted-foreground text-lg md:text-xl font-light">
+            Para quem compreende que a localização é a única moeda que nunca desvaloriza. Uma
+            oportunidade reservada para investidores de visão e escala.
+          </p>
+        </FadeIn>
+
+        <FadeIn delay={400}>
+          <div className="w-12 h-px bg-secondary mx-auto mt-12" />
+        </FadeIn>
+      </div>
     </section>
   )
 }

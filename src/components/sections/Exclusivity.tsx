@@ -1,44 +1,50 @@
-import { Lock } from 'lucide-react'
 import { FadeIn } from '@/components/ui/fade-in'
 import { Button } from '@/components/ui/button'
+import { ArrowRight, Lock } from 'lucide-react'
 
-export function ExclusivitySection() {
+export function Exclusivity() {
   return (
-    <section id="exclusivity" className="py-24 px-6 bg-background">
-      <FadeIn>
-        <div className="w-12 h-12 rounded-full bg-secondary/50 flex items-center justify-center mb-8">
-          <Lock className="w-5 h-5 text-primary" />
-        </div>
-        <h2 className="text-3xl font-serif mb-6">Modelo de Negociação Privada</h2>
-        <div className="space-y-4 text-muted-foreground font-light leading-relaxed mb-12">
-          <p>
-            A natureza deste ativo exige discrição. As condições comerciais, documentação legal e
-            análises topográficas detalhadas são reservadas exclusivamente a investidores
-            pré-qualificados.
-          </p>
-          <p>
-            Não atuamos com "venda aberta". Nosso modelo baseia-se no alinhamento de visão de longo
-            prazo com o futuro proprietário.
-          </p>
-        </div>
-      </FadeIn>
+    <section
+      id="contato"
+      className="py-24 md:py-32 bg-primary text-primary-foreground relative overflow-hidden"
+    >
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 pointer-events-none">
+        <Lock className="w-[500px] h-[500px]" />
+      </div>
 
-      <FadeIn
-        delay={200}
-        id="cta"
-        className="space-y-4 p-8 bg-card border border-border/50 rounded-xl shadow-subtle text-center"
-      >
-        <h3 className="font-serif text-xl mb-6">Acesse as Informações Confidenciais</h3>
-        <Button className="w-full h-14 text-base font-medium tracking-wide shadow-elevation transition-all hover:scale-[1.02]">
-          Receber Dossiê Completo
-        </Button>
-        <Button
-          variant="outline"
-          className="w-full h-14 text-base font-medium tracking-wide bg-transparent border-foreground/20 hover:bg-foreground/5"
-        >
-          Agendar Call Privada
-        </Button>
-      </FadeIn>
+      <div className="container mx-auto px-6 relative z-10 max-w-4xl text-center">
+        <FadeIn>
+          <Lock className="w-12 h-12 mx-auto mb-8 text-secondary" />
+          <h2 className="text-sm font-bold tracking-[0.2em] uppercase text-white/50 mb-6">
+            Condições sob Consulta
+          </h2>
+          <h3 className="text-3xl md:text-5xl font-serif leading-tight mb-8">
+            Negociação Restrita
+          </h3>
+          <p className="text-lg md:text-xl text-white/70 font-light mb-16 max-w-2xl mx-auto">
+            Este ativo de rara disponibilidade exige qualificação prévia. Solicite o dossiê completo
+            para avançar na análise desta oportunidade.
+          </p>
+        </FadeIn>
+
+        <FadeIn delay={200} className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <Button
+            size="lg"
+            className="w-full sm:w-auto h-16 px-8 bg-secondary text-primary hover:bg-secondary/90 rounded-none text-sm md:text-base tracking-wide uppercase font-semibold group"
+          >
+            Receber dossiê completo e condições
+            <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Button>
+
+          <Button
+            variant="outline"
+            size="lg"
+            className="w-full sm:w-auto h-16 px-8 bg-transparent border-white/30 text-white hover:bg-white/10 hover:text-white rounded-none text-sm md:text-base tracking-wide uppercase font-semibold"
+          >
+            Agendar visita técnica / call privada
+          </Button>
+        </FadeIn>
+      </div>
     </section>
   )
 }

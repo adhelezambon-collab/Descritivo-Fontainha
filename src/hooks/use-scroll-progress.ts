@@ -4,16 +4,17 @@ export function useScrollProgress() {
   const [progress, setProgress] = useState(0)
 
   useEffect(() => {
-    const handleScroll = () => {
-      const totalScroll = document.documentElement.scrollTop
-      const windowHeight =
-        document.documentElement.scrollHeight - document.documentElement.clientHeight
-      const scroll = `${totalScroll / windowHeight}`
-      setProgress(Number(scroll) * 100)
+    const updateScroll = () => {
+      const currentScrollY = window.scrollY
+      const scrollHeight = document.body.scrollHeight - window.innerHeight
+      if (scrollHeight) {
+        setProgress(Number((currentScrollY / scrollHeight).toFixed(2)) * 100)
+      }
     }
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', updateScroll)
+    updateScroll()
+    return () => window.removeEventListener('scroll', updateScroll)
   }, [])
 
   return progress

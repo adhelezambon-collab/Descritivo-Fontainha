@@ -1,15 +1,13 @@
 export function Footer() {
   return (
-    <footer className="py-12 px-6 bg-foreground text-center border-t border-white/10">
-      <div className="font-serif font-bold text-2xl tracking-widest text-white mb-6">
-        A<span className="text-primary">.</span>
+    <footer className="py-12 bg-[#0a0a0a] text-white/50 text-center">
+      <div className="container mx-auto px-6">
+        <p className="font-serif text-xl mb-4 text-white/80">Imóvel Raro</p>
+        <p className="text-sm font-light">
+          &copy; {new Date().getFullYear()} Todos os direitos reservados. Apresentação estritamente
+          confidencial.
+        </p>
       </div>
-      <p className="text-xs text-white/40 tracking-wider uppercase mb-2">
-        Apresentação Confidencial
-      </p>
-      <p className="text-xs text-white/30">
-        &copy; {new Date().getFullYear()} Patrimônio Exclusivo. Todos os direitos reservados.
-      </p>
     </footer>
   )
 }

@@ -1,98 +1,86 @@
-import { Play } from 'lucide-react'
 import { FadeIn } from '@/components/ui/fade-in'
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
-import { AspectRatio } from '@/components/ui/aspect-ratio'
+import { Play } from 'lucide-react'
 
-const videos = [
-  {
-    id: 1,
-    title: 'A Visão Geral',
-    caption: 'Drone e percurso de 97 hectares.',
-    img: 'https://img.usecurling.com/p/800/450?q=beachfront%20drone&color=blue&dpr=2',
-    ratio: 16 / 9,
-    main: true,
-  },
-  {
-    id: 2,
-    title: 'Acessibilidade',
-    caption: 'Do aeroporto ao terreno.',
-    img: 'https://img.usecurling.com/p/400/400?q=road%20trip&color=gray&dpr=2',
-    ratio: 1,
-    main: false,
-  },
-  {
-    id: 3,
-    title: 'O Pé na Areia',
-    caption: '850m de frente mar.',
-    img: 'https://img.usecurling.com/p/400/400?q=sand%20beach&color=yellow&dpr=2',
-    ratio: 1,
-    main: false,
-  },
-]
-
-function VideoThumbnail({ video }: { video: (typeof videos)[0] }) {
-  return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <div className="group cursor-pointer space-y-3">
-          <div className="relative overflow-hidden rounded-lg shadow-sm">
-            <AspectRatio ratio={video.ratio}>
-              <img
-                src={video.img}
-                alt={video.title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white group-hover:scale-110 group-hover:bg-primary transition-all">
-                  <Play className="w-5 h-5 fill-current ml-1" />
-                </div>
-              </div>
-            </AspectRatio>
-          </div>
-          <div>
-            <h4 className="font-serif text-lg leading-tight">{video.title}</h4>
-            <p className="text-sm text-muted-foreground">{video.caption}</p>
-          </div>
-        </div>
-      </DialogTrigger>
-      <DialogContent className="max-w-3xl p-0 bg-black border-none overflow-hidden">
-        <AspectRatio
-          ratio={16 / 9}
-          className="bg-muted flex items-center justify-center text-muted-foreground"
-        >
-          {/* Mock Video Player */}
-          <div className="text-center">
-            <Play className="w-12 h-12 mx-auto mb-4 opacity-50" />
-            <p>Demonstração do Vídeo Confidencial</p>
-          </div>
-        </AspectRatio>
-      </DialogContent>
-    </Dialog>
-  )
-}
-
-export function MediaSection() {
-  const mainVideo = videos.find((v) => v.main)!
-  const subVideos = videos.filter((v) => !v.main)
+export function Media() {
+  const videos = [
+    {
+      title: 'Voo de Drone',
+      caption: 'A imensidão dos 97 hectares a partir do oceano.',
+      duration: '1:20',
+      img: 'https://img.usecurling.com/p/800/400?q=ocean%20drone%20view&color=blue',
+    },
+    {
+      title: 'Acesso e Estrutura',
+      caption: 'A viabilidade técnica para grandes empreendimentos.',
+      duration: '0:30',
+      img: 'https://img.usecurling.com/p/400/300?q=coastal%20road&color=gray',
+    },
+    {
+      title: 'Visão do Investidor',
+      caption: 'A escala do terreno e potencial de valorização.',
+      duration: '0:15',
+      img: 'https://img.usecurling.com/p/400/300?q=luxury%20beach%20estate',
+    },
+  ]
 
   return (
-    <section id="media" className="py-24 px-6 bg-secondary/20">
-      <FadeIn>
-        <span className="text-primary text-sm font-semibold tracking-widest uppercase mb-4 block">
-          Experiência Imersiva
-        </span>
-        <h2 className="text-3xl font-serif mb-12">Conheça a dimensão da oportunidade.</h2>
-      </FadeIn>
-
-      <div className="space-y-8">
+    <section id="videos" className="py-24 md:py-32 bg-zinc-50">
+      <div className="container mx-auto px-6 max-w-6xl">
         <FadeIn>
-          <VideoThumbnail video={mainVideo} />
+          <div className="mb-16">
+            <h2 className="text-sm font-bold tracking-[0.2em] uppercase text-muted-foreground mb-4">
+              Apresentação Visual
+            </h2>
+            <h3 className="text-3xl md:text-4xl font-serif text-primary">O Ativo em Movimento</h3>
+          </div>
         </FadeIn>
 
-        <div className="grid grid-cols-2 gap-4">
-          {subVideos.map((video, idx) => (
-            <FadeIn key={video.id} delay={idx * 150}>
-              <VideoThumbnail video={video} />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Main Video */}
+          <FadeIn className="md:col-span-2">
+            <div className="group relative aspect-video bg-muted overflow-hidden cursor-pointer">
+              <img
+                src={videos[0].img}
+                alt={videos[0].title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/40 flex items-center justify-center transition-colors group-hover:bg-black/30">
+                <div className="w-20 h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
+                  <Play className="w-8 h-8 text-white ml-2" fill="currentColor" />
+                </div>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bg-gradient-to-t from-black/80 to-transparent text-white">
+                <span className="text-xs font-bold tracking-widest uppercase mb-2 block text-secondary">
+                  {videos[0].duration}
+                </span>
+                <h4 className="text-2xl font-serif mb-2">{videos[0].title}</h4>
+                <p className="text-white/80 font-light text-sm md:text-base">{videos[0].caption}</p>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Secondary Videos */}
+          {videos.slice(1).map((video, i) => (
+            <FadeIn key={i} delay={i * 200}>
+              <div className="group relative aspect-video bg-muted overflow-hidden cursor-pointer">
+                <img
+                  src={video.img}
+                  alt={video.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center transition-colors group-hover:bg-black/30">
+                  <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
+                    <Play className="w-6 h-6 text-white ml-1.5" fill="currentColor" />
+                  </div>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white">
+                  <span className="text-xs font-bold tracking-widest uppercase mb-2 block text-secondary">
+                    {video.duration}
+                  </span>
+                  <h4 className="text-xl font-serif mb-1">{video.title}</h4>
+                  <p className="text-white/80 font-light text-sm">{video.caption}</p>
+                </div>
+              </div>
             </FadeIn>
           ))}
         </div>

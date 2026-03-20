@@ -1,53 +1,63 @@
-import { MapPin, Navigation, Plane } from 'lucide-react'
 import { FadeIn } from '@/components/ui/fade-in'
+import locationImage from '@/assets/photo-2026-03-20-08-31-14-21c68.jpg'
 
-const points = [
-  { icon: Navigation, dist: '150 km', label: 'de Fortaleza (Capital)' },
-  { icon: Plane, dist: '15 km', label: 'do Aeroporto de Aracati' },
-  { icon: MapPin, dist: '12 km', label: 'de Canoa Quebrada' },
-]
+export function Location() {
+  const distances = [
+    { label: 'Fortaleza', value: '150 km' },
+    { label: 'Aeroporto de Aracati', value: '15 km' },
+    { label: 'Praia de Canoa Quebrada', value: '12 km' },
+  ]
 
-export function LocationSection() {
   return (
-    <section id="location" className="py-24 bg-foreground text-background relative overflow-hidden">
-      {/* Decorative Map Background */}
-      <div className="absolute right-0 top-0 opacity-5 pointer-events-none w-full h-full">
-        <svg
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-          className="w-full h-full fill-current"
-        >
-          <path d="M0,0 Q50,100 100,0 V100 H0 Z" />
-        </svg>
-      </div>
+    <section id="localizacao" className="py-24 md:py-32 bg-background">
+      <div className="container mx-auto px-6">
+        <div className="flex flex-col lg:flex-row items-center gap-16 max-w-6xl mx-auto">
+          <div className="flex-1 w-full">
+            <FadeIn>
+              <h2 className="text-sm font-bold tracking-[0.2em] uppercase text-muted-foreground mb-4">
+                Posicionamento Estratégico
+              </h2>
+              <h3 className="text-3xl md:text-4xl font-serif text-primary mb-8 leading-tight">
+                Acessibilidade global, <br />
+                isolamento preservado.
+              </h3>
+              <p className="text-lg text-muted-foreground font-light mb-10 leading-relaxed">
+                Situado estrategicamente no litoral leste cearense, o terreno oferece a
+                tranquilidade de um refúgio exclusivo com a conveniência de infraestrutura
+                aeroportuária e rodoviária a poucos minutos de distância.
+              </p>
 
-      <div className="relative z-10 px-6">
-        <FadeIn>
-          <span className="text-primary text-sm font-semibold tracking-widest uppercase mb-4 block">
-            Eixo Logístico
-          </span>
-          <h2 className="text-3xl font-serif mb-6 text-white">Localização Estratégica.</h2>
-          <p className="text-white/60 mb-12 max-w-sm font-light">
-            O isolamento que o investidor busca, com a infraestrutura que o alto padrão exige.
-            Acesso facilitado para o mundo.
-          </p>
-        </FadeIn>
+              <ul className="space-y-6">
+                {distances.map((dist, i) => (
+                  <li
+                    key={i}
+                    className="flex items-center justify-between border-b border-border pb-4"
+                  >
+                    <span className="text-lg font-light text-foreground">{dist.label}</span>
+                    <span className="text-xl font-serif font-medium text-secondary">
+                      {dist.value}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </FadeIn>
+          </div>
 
-        <div className="space-y-6">
-          {points.map((point, idx) => {
-            const Icon = point.icon
-            return (
-              <FadeIn key={idx} delay={idx * 100} className="flex items-center gap-6 group">
-                <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-hover:bg-primary/20 group-hover:border-primary/50 transition-colors">
-                  <Icon className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <div className="text-xl font-serif text-white">{point.dist}</div>
-                  <div className="text-sm text-white/50">{point.label}</div>
-                </div>
-              </FadeIn>
-            )
-          })}
+          <div className="flex-1 w-full">
+            <FadeIn direction="left">
+              <div className="relative aspect-[4/5] md:aspect-square overflow-hidden bg-muted">
+                <img
+                  src={locationImage}
+                  alt="Mapa de Localização - Aracati Fontainha"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 ring-1 ring-inset ring-black/10" />
+              </div>
+              <p className="text-sm text-muted-foreground font-light mt-4 text-center italic">
+                Um ativo estratégico no corredor turístico internacional do Ceará.
+              </p>
+            </FadeIn>
+          </div>
         </div>
       </div>
     </section>
