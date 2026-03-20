@@ -5,7 +5,6 @@ import { Manifesto } from '@/components/sections/Manifesto'
 import { Highlights } from '@/components/sections/Highlights'
 import { Location } from '@/components/sections/Location'
 import { Potential } from '@/components/sections/Potential'
-import { Media } from '@/components/sections/Media'
 import { VideoGallery } from '@/components/sections/VideoGallery'
 import { Gallery } from '@/components/sections/Gallery'
 import { Contact } from '@/components/sections/Contact'
@@ -31,7 +30,6 @@ export default function Index() {
         <Highlights />
         <Location />
         <Potential />
-        <Media />
         <VideoGallery />
         <Gallery />
         <Contact />

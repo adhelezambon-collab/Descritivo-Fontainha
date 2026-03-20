@@ -21,7 +21,7 @@ export function VideoGallery() {
   ]
 
   return (
-    <section className="py-24 md:py-32 bg-zinc-950 text-white border-y border-zinc-900">
+    <section id="videos" className="py-24 md:py-32 bg-zinc-950 text-white border-y border-zinc-900">
       <div className="container mx-auto px-6 max-w-7xl">
         <FadeIn>
           <div className="text-center mb-16 md:mb-24">
