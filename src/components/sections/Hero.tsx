@@ -28,7 +28,7 @@ export function Hero() {
 
         <FadeIn delay={600}>
           <p className="text-lg md:text-xl text-white/80 font-light max-w-2xl leading-relaxed">
-            Imóvel 3 — Praia da Fontainha, Aracati/CE. <br className="hidden md:block" />
+            Praia da Fontainha, Aracati/CE. <br className="hidden md:block" />
             Um ativo de rara disponibilidade reservado para investidores de visão e escala.
           </p>
         </FadeIn>

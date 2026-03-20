@@ -23,15 +23,6 @@ export function VideoGallery() {
   return (
     <section id="videos" className="py-24 md:py-32 bg-zinc-950 text-white border-y border-zinc-900">
       <div className="container mx-auto px-6 max-w-7xl">
-        <FadeIn>
-          <div className="text-center mb-16 md:mb-24">
-            <h2 className="text-sm font-bold tracking-[0.2em] uppercase text-zinc-500 mb-4">
-              Acervo de Vídeos
-            </h2>
-            <h3 className="text-3xl md:text-5xl font-serif text-zinc-100">Imersão no Terreno</h3>
-          </div>
-        </FadeIn>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
           {videos.map((video, i) => (
             <FadeIn key={video.id} delay={i * 150}>
