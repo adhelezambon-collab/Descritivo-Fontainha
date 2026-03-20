@@ -22,8 +22,17 @@ export function Highlights() {
   ]
 
   return (
-    <section className="py-24 bg-zinc-50 border-y border-zinc-200">
+    <section className="py-24 md:py-32 bg-zinc-50 border-y border-zinc-200">
       <div className="container mx-auto px-6">
+        <FadeIn>
+          <div className="text-center mt-8 md:mt-16 mb-16 md:mb-20">
+            <h2 className="text-4xl md:text-5xl font-serif text-primary font-medium tracking-wide">
+              Descritivo
+            </h2>
+            <div className="w-12 h-[2px] bg-secondary mx-auto mt-6 opacity-80" />
+          </div>
+        </FadeIn>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {stats.map((stat, i) => (
             <FadeIn key={i} delay={i * 200}>
