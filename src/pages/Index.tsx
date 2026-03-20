@@ -6,6 +6,7 @@ import { Highlights } from '@/components/sections/Highlights'
 import { Location } from '@/components/sections/Location'
 import { Potential } from '@/components/sections/Potential'
 import { Media } from '@/components/sections/Media'
+import { VideoGallery } from '@/components/sections/VideoGallery'
 import { Gallery } from '@/components/sections/Gallery'
 import { Contact } from '@/components/sections/Contact'
 import { Footer } from '@/components/sections/Footer'
@@ -31,6 +32,7 @@ export default function Index() {
         <Location />
         <Potential />
         <Media />
+        <VideoGallery />
         <Gallery />
         <Contact />
       </main>
