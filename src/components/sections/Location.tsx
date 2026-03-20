@@ -40,6 +40,15 @@ export function Location() {
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-10 border-l-2 border-secondary pl-6 py-1">
+                <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed">
+                  Fica vizinho a uma comunidade nativa de pescadores artesanais com total infra
+                  estrutura, fácil acesso,{' '}
+                  <strong className="font-medium text-foreground">asfalto</strong> e{' '}
+                  <strong className="font-medium text-foreground">eletricidade</strong>.
+                </p>
+              </div>
             </FadeIn>
           </div>
 
