@@ -3,19 +3,20 @@ import { FadeIn } from '@/components/ui/fade-in'
 export function VideoGallery() {
   const videos = [
     {
-      id: 1,
-      title: 'Aérea e Proximidade',
-      src: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+      id: '1175642948',
+      title: 'Perspectiva Aérea e Dimensão',
     },
     {
-      id: 2,
-      title: 'Faixa de Areia',
-      src: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
+      id: '1175642932',
+      title: 'Extensão da Faixa de Areia',
     },
     {
-      id: 3,
-      title: 'Topografia e Vegetação',
-      src: 'https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4',
+      id: '1175642911',
+      title: 'Topografia e Vegetação Nativa',
+    },
+    {
+      id: '1175642898',
+      title: 'Acessibilidade e Estrutura',
     },
   ]
 
@@ -31,17 +32,17 @@ export function VideoGallery() {
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
           {videos.map((video, i) => (
-            <FadeIn key={video.id} delay={i * 200}>
+            <FadeIn key={video.id} delay={i * 150}>
               <div className="flex flex-col group">
                 <div className="relative aspect-video bg-zinc-900 overflow-hidden ring-1 ring-white/10 shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
-                  <video
-                    src={video.src}
-                    controls
-                    preload="metadata"
-                    className="w-full h-full object-cover"
-                    poster={`https://img.usecurling.com/p/800/450?q=ocean%20coastline&color=black&seed=${video.id}`}
+                  <iframe
+                    src={`https://player.vimeo.com/video/${video.id}?title=0&byline=0&portrait=0`}
+                    className="absolute inset-0 w-full h-full border-0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen
+                    title={video.title}
                   />
                 </div>
                 <div className="mt-6 text-center md:text-left">
