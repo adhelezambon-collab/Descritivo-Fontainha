@@ -5,7 +5,7 @@ export function Location() {
   const distances = [
     { label: 'Fortaleza', value: '150 km' },
     { label: 'Aeroporto de Aracati', value: '15 km' },
-    { label: 'Praia de Canoa Quebrada', value: '12 km' },
+    { label: 'Praia de Canoa Quebrada', value: '15 km' },
   ]
 
   return (
@@ -24,7 +24,7 @@ export function Location() {
               <p className="text-lg text-muted-foreground font-light mb-10 leading-relaxed">
                 Situado estrategicamente no litoral leste cearense, o terreno oferece a
                 tranquilidade de um refúgio exclusivo com a conveniência de infraestrutura
-                aeroportuária e rodoviária a poucos minutos de distância. A apenas 12 km da icônica
+                aeroportuária e rodoviária a poucos minutos de distância. A apenas 15 km da icônica
                 Praia de Canoa Quebrada, esta área de 97 hectares destaca-se como um imóvel raro e
                 exclusivo, com potencial inigualável para projetos de alto padrão.
               </p>
