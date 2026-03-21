@@ -24,7 +24,9 @@ export function Location() {
               <p className="text-lg text-muted-foreground font-light mb-10 leading-relaxed">
                 Situado estrategicamente no litoral leste cearense, o terreno oferece a
                 tranquilidade de um refúgio exclusivo com a conveniência de infraestrutura
-                aeroportuária e rodoviária a poucos minutos de distância.
+                aeroportuária e rodoviária a poucos minutos de distância. A apenas 12 km da icônica
+                Praia de Canoa Quebrada, esta área de 97 hectares destaca-se como um imóvel raro e
+                exclusivo, com potencial inigualável para projetos de alto padrão.
               </p>
 
               <ul className="space-y-6">
@@ -43,8 +45,8 @@ export function Location() {
 
               <div className="mt-10 border-l-2 border-secondary pl-6 py-1">
                 <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed">
-                  Fica vizinho a uma comunidade nativa de pescadores artesanais com total infra
-                  estrutura, fácil acesso,{' '}
+                  Fica vizinho a uma comunidade nativa de pescadores artesanais com total
+                  infraestrutura, fácil acesso,{' '}
                   <strong className="font-medium text-foreground">asfalto</strong> e{' '}
                   <strong className="font-medium text-foreground">eletricidade</strong>.
                 </p>
