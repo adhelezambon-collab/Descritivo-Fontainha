@@ -1,22 +1,26 @@
 import { FadeIn } from '@/components/ui/fade-in'
 
 export function VideoGallery() {
-  const videos = [
+ const videos = [
   {
     id: '/videos/VIDEO-2026-03-20-08-31-03 (2).mp4',
     title: 'Perspectiva Aérea e Dimensão',
+    type: 'file',
   },
   {
-    id: '/videos/VIDEO-2026-03-20-08-31-03 (2).mp4',
+    id: '1175642932',
     title: 'Extensão da Faixa de Areia',
+    type: 'vimeo',
   },
   {
     id: '/videos/WhatsApp Video 2026-03-20 at 08.31.12 (Copy).mp4',
     title: 'Topografia e Vegetação Nativa',
+    type: 'file',
   },
   {
-    id: '/videos/WhatsApp Video 2026-03-20 at 08.31.12 (Copy).mp4',
+    id: '1175642898',
     title: 'Acessibilidade e Estrutura',
+    type: 'vimeo',
   },
 ]
 
@@ -28,11 +32,23 @@ export function VideoGallery() {
             <FadeIn key={video.id} delay={i * 150}>
               <div className="flex flex-col group">
                 <div className="relative aspect-video bg-zinc-900 overflow-hidden ring-1 ring-white/10 shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
-                  <video controls playsInline className="w-full h-full object-cover">
-  <source src={video.id} type="video/mp4" />
-  Seu navegador não suporta vídeo.
-</video>
-                </div>
+                {video.type === 'file' ? (
+ 
+  <video controls playsInline className="w-full h-full object-cover">
+    <source src={video.id} type="video/mp4" />
+    Seu navegador não suporta vídeo.
+  </video>
+) : (
+  <iframe
+    src={`https://player.vimeo.com/video/${video.id}`}
+    title={video.title}
+    className="w-full h-full object-cover"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowFullScreen
+  />
+)}
+
+          </div>
                 <div className="mt-6 text-center md:text-left">
                   <h4 className="text-xl font-serif text-zinc-100">{video.title}</h4>
                   <div className="w-8 h-px bg-secondary mt-4 mx-auto md:mx-0 transition-all duration-500 group-hover:w-16" />
