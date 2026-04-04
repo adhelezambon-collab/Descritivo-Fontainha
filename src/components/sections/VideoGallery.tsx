@@ -3,7 +3,7 @@ import { FadeIn } from '@/components/ui/fade-in'
 export function VideoGallery() {
  const videos = [
   {
-    id: '/videos/VIDEO-2026-03-20-08-31-03 (2).mp4',
+    id: '/videos/VIDEO-2026-03-20-08-31-03 (3).mp4',
     title: 'Perspectiva Aérea e Dimensão',
     type: 'file',
   },
