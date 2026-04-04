@@ -2,23 +2,23 @@ import { FadeIn } from '@/components/ui/fade-in'
 
 export function VideoGallery() {
   const videos = [
-    {
-      id: '1175642948',
-      title: 'Perspectiva Aérea e Dimensão',
-    },
-    {
-      id: '1175642932',
-      title: 'Extensão da Faixa de Areia',
-    },
-    {
-      id: '1175642911',
-      title: 'Topografia e Vegetação Nativa',
-    },
-    {
-      id: '1175642898',
-      title: 'Acessibilidade e Estrutura',
-    },
-  ]
+  {
+    id: '/videos/VIDEO-2026-03-20-08-31-03 (2).mp4',
+    title: 'Perspectiva Aérea e Dimensão',
+  },
+  {
+    id: '/videos/VIDEO-2026-03-20-08-31-03 (2).mp4',
+    title: 'Extensão da Faixa de Areia',
+  },
+  {
+    id: '/videos/WhatsApp Video 2026-03-20 at 08.31.12 (Copy).mp4',
+    title: 'Topografia e Vegetação Nativa',
+  },
+  {
+    id: '/videos/WhatsApp Video 2026-03-20 at 08.31.12 (Copy).mp4',
+    title: 'Acessibilidade e Estrutura',
+  },
+]
 
   return (
     <section id="videos" className="py-24 md:py-32 bg-zinc-950 text-white border-y border-zinc-900">
