@@ -45,3 +45,9 @@
     text-wrap: balance;
   }
 }
+/* Remove botão do Skip */
+iframe[src*="skip"],
+div[class*="skip"],
+div[id*="skip"] {
+  display: none !important;
+}
