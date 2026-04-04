@@ -28,7 +28,9 @@ export function Contact() {
 
         <FadeIn delay={200} className="flex flex-col items-center justify-center gap-6">
           <a
-            href="tel:+558599815002"
+            href="https://wa.me/5585999815002?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20im%C3%B3vel."
+target="_blank"
+  rel="noopener noreferrer"          
             className="inline-flex items-center justify-center h-20 px-10 bg-secondary text-primary hover:bg-secondary/90 transition-all hover:scale-105 active:scale-95 text-2xl md:text-4xl font-serif font-medium tracking-wide shadow-2xl"
           >
             <Phone className="w-6 h-6 md:w-8 md:h-8 mr-4" />
