@@ -3,7 +3,7 @@ import { Phone } from 'lucide-react'
 
 export function FAB() {
   return (
-    <div className="fixed bottom-6 right-6 z-40">
+  <div className="fixed bottom-6 right-6 z-40 animate-[float_3s_ease-in-out_infinite]">
       <Button
   size="lg"
   className="group rounded-full border border-white/10 bg-[#c8a646] text-white shadow-[0_12px_35px_rgba(0,0,0,0.28)] hover:bg-[#d6b45a] hover:shadow-[0_20px_45px_rgba(0,0,0,0.4)] h-14 px-6 gap-3 transition-all duration-500 hover:-translate-y-1 hover:scale-[1.03]"
