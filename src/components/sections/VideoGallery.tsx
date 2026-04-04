@@ -28,13 +28,10 @@ export function VideoGallery() {
             <FadeIn key={video.id} delay={i * 150}>
               <div className="flex flex-col group">
                 <div className="relative aspect-video bg-zinc-900 overflow-hidden ring-1 ring-white/10 shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
-                  <iframe
-                    src={`https://player.vimeo.com/video/${video.id}?title=0&byline=0&portrait=0`}
-                    className="absolute inset-0 w-full h-full border-0"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowFullScreen
-                    title={video.title}
-                  />
+                  <video controls playsInline className="w-full h-full object-cover">
+  <source src={video.id} type="video/mp4" />
+  Seu navegador não suporta vídeo.
+</video>
                 </div>
                 <div className="mt-6 text-center md:text-left">
                   <h4 className="text-xl font-serif text-zinc-100">{video.title}</h4>
