@@ -34,7 +34,7 @@ export function VideoGallery() {
                 <div className="relative aspect-video bg-zinc-900 overflow-hidden ring-1 ring-white/10 shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
                 {video.type === 'file' ? (
  
-  <video controls playsInline className="w-full h-full object-cover">
+  <video controls playsInline className="w-full h-full object-cover" poster={i === 0 ? "/poster1.jpg" : "/poster2.jpg"}>
     <source src={video.id} type="video/mp4" />
     Seu navegador não suporta vídeo.
   </video>
