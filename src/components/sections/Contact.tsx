@@ -27,11 +27,13 @@ export function Contact() {
         </FadeIn>
 
         <FadeIn delay={200} className="flex flex-col items-center justify-center gap-6">
-          <a                       href="https://wa.me/5585999815002?text=Oi%20tenho%20interesse%20no%20im%C3%B3vel"
-target="_blank"
-  rel="noopener noreferrer"          
-            className="group relative overflow-hidden inline-flex items-center justify-center h-20 px-10 rounded-full border border-white/15 bg-[linear-gradient(135deg,#e0c15d_0%,#c8a646_38%,#a8841f_100%)] text-[#111] shadow-[0_14px_30px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.35),inset_0_-1px_0_rgba(0,0,0,0.12)] hover:scale-[1.04] hover:shadow-[0_20px_45px_rgba(0,0,0,0.35),0_0_20px_rgba(200,166,70,0.22)] transition-all duration-500 text-2xl md:text-4xl font-serif font-medium""
-          >
+       <a href="https://wa.me/5585999815002?text=Oi%20tenho%20interesse" target="_blank" rel="noopener noreferrer"
+  className="group relative overflow-hidden inline-flex items-center justify-center h-20 px-10 rounded-full border border-white/15 bg-[linear-gradient(135deg,#e0c15d_0%,#c8a646_38%,#a8841f_100%)] text-[#111]"
+>
+
+      
+           
+          
             <Phone className="w-6 h-6 md:w-8 md:h-8 mr-4" />
             85-99815002
           </a>
